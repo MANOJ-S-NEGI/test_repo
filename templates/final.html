@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	form {
+	  background-image: url("static/img_tree.png");
+	  background-repeat: no-repeat;
+	  background-position: right top;
+	  margin-right: 00px;
+	  margin-bottom: 100px
+		}
+
+    fieldset {
+			  font-size:12px;
+			  padding:20px;
+			  width:1700px;
+			  line-height:10.5;
+			  }
+
+	legend {
+
+			color: #76D7C4;
+
+		}
+
+
+    input[type="button"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: #76D7C4 ;
+    color: #FFF;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #808080; /* Darken the background on hover */
+    }
+	</style>
+
+</head>
+    <body style="color: white;">
+        <form>
+            <fieldset>
+                <legend><h2 style="font-size: 24px;">SELLING PRICE IS:</h2></legend>
+                    <h2 style="font-size: 24px;"> {{prediction_texts}}</h2>
+                <br>
+               <input type="button" value="CHECK AGAIN" onclick="history.back()">
+
+            </fieldset>
+        </form>
+    </body>
+</html>
+
+

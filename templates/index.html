@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	form {
+	  background-image: url("static/img_tree.png");
+	  background-repeat: no-repeat;
+	  background-position: right top;
+	  margin-right: 5px;
+		}
+
+	fieldset {
+			  font-size:12px;
+			  padding:20px;
+			  width:1700px;
+			  line-height:2.5;
+			  }
+
+	legend {
+			background-color: #000;
+			color: #FFFFFF;
+			padding: 0.01px 100px;
+		}
+
+   select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+   input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #76D7C4;
+    color: #FFF;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #808081; /* Darken the background on hover */
+}
+
+
+
+	</style>
+</head>
+
+<body style="color: white;">
+<form action="{{url_for('predict')}}" method= "Post">
+
+
+	<fieldset>
+    <legend><h2 style="font-size: 24px;">Car Price Prediction</h2></legend>
+
+
+
+
+    <label for="year" style="font-size: 26px;">Year :</label>
+          <input type="number" id="year" name="year" required='required'><br>
+
+	<label for="km_driven" style="font-size: 26px;" >Km_Driven :</label>
+        <input type="number" id="km_driven" name="km_driven" required='required'><br>
+
+
+	<label for="fuel" style="font-size: 26px;" >Fuel Type :</label>
+        <select id="fuel" name="fuel">
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="LPG">LPG</option>
+            <option value="CNG">CNG</option>
+        </select><br>
+
+        <label for="seller_type" style="font-size: 26px;">Seller Type :</label>
+        <select id="seller_type" name="seller_type">
+            <option value="Dealer">Dealer</option>
+            <option value="Individual">Individual</option>
+            <option value="Trustmark">Trustmark</option>
+        </select><br>
+
+        <label for="transmission" style="font-size: 26px;">Transmission :</label>
+        <select id="transmission" name="transmission">
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+        </select><br>
+
+
+     <label for="owner" style="font-size: 26px;">Owner :</label>
+        <select id="owner" name="owner">
+            <option value="First Owner">First Owner</option>
+            <option value="Second Owner">Second Owner'</option>
+            <option value="Third Owner">Third Owner</option>
+            <option value="Fourth & Above Owner">Fourth & Above Owner'</option>
+             <option value="Test Drive Car">Test Drive Car</option>
+        </select><br>
+
+
+	<label for="seats" style="font-size: 26px;">Seats :</label>
+        <input type="number" id="seats" name="seats" required='required'><br>
+
+	<label for="mileage_kmpl" style="font-size: 26px;">Mileage (kmpl) :</label>
+        <input type="number" id="mileage_kmpl" name="mileage_kmpl" required='required'><br>
+
+    <label for="engine_cc" style="font-size: 26px;">Engine (cc):</label>
+        <input type="number" id="engine_cc" name="engine_cc" required='required'><br>
+
+    <label for="max_power_bhp" style="font-size: 26px;">Maximum Power (bhp):</label>
+        <input type="number" id="max_power_bhp" name="max_power_bhp" required='required'><br>
+
+    <label for="torque_kgm" style="font-size: 26px;">torque (kgm):</label>
+        <input type="number" id="torque_kgm" name="torque_kgm" required='required'><br>
+
+    <label for="rpm" style="font-size: 26px;">RPM:</label>
+        <input type="number" id="rpm" name="rpm" required='required'><br>
+
+<br>
+		<input type="submit" value="Calculate price"> <br>
+
+		<h2>{{prediction_texts}}</h2>
+  </fieldset>
+</form>
+
+</body>
+</html>
